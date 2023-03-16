@@ -1,0 +1,29 @@
+
+
+div{
+    margin-bottom: 10px;
+    padding-left: 10px; 
+
+}
+
+.rounded_border{
+    border: 2px;
+    border-radius: 5px;
+    border-color: black;
+    border-style: solid
+}
+
+.blue_bg{
+    background-color: blue;
+    width: 50%;
+    color: white;
+}
+
+.purple_color{
+    color: purple;
+}
+
+.default_list{
+    font-weight: bold;
+    padding-left: 15px;
+}
