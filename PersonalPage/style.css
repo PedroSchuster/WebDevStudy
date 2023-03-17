@@ -1,14 +1,23 @@
-.grid-container {
-    display: grid;
-  }
+body {
+background-color: #FFF1E3;
+}
+
 .navbar {
     list-style-type: none;
-    margin: 0;
+    margin-bottom: 5vw;
     padding: 0;
+    text-align: center;
   }
 
-  li{
+ .navbar > li{
     display: inline;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    padding-bottom: 10px;
+    border-bottom: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #F3D4CA;
+    
   }
 
   li a {
@@ -16,7 +25,70 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-size: 30px;
   }
-  li a:hover {
-    background-color: #111;
+
+  #home{
+    text-align: center;
   }
+
+  #name{
+    font-size: 40px;
+  }
+
+  #home h3{
+    font-size: 30px;
+  }
+
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5vw;
+    row-gap: 5px;
+    padding: 10px;
+  }
+
+  #home ul{
+    display: inline-block;
+    text-align: left;
+    padding-right: 10px;
+    font-size: 24px;
+    margin-top: 0;
+  }
+
+  @media (max-width: 992px) {
+    .grid-container {  grid-template-columns: auto;}
+}   
+
+#github{
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.div-section{
+  text-align: center;
+}
+
+.div-section h2{
+  font-size: 36px;
+}
+
+.div-section p{
+  font-size: 24px;
+  text-align: justify;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.div-section ul{
+  display: inline-block;
+  text-align: left;
+  font-size: 24px;
+
+}
+
+footer{
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
