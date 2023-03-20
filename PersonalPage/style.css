@@ -1,7 +1,11 @@
 body {
 background-color: #FFF1E3;
+margin: 0;
 }
-
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
 .navbar {
     list-style-type: none;
     margin-bottom: 5vw;
@@ -87,8 +91,10 @@ background-color: #FFF1E3;
 
 }
 
-footer{
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 0;
+
+footer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  background-color: #F3D4CA;
 }
