@@ -16,7 +16,7 @@
                 <p id="pEx1">Texto</p>
 
                 <script>
-                //adicione aqui o script para resolução do Exercício 1
+                document.getElementById("pEx1").textContent = "Olá";
                 </script>
 
             <h3>Exercício 2</h3>
@@ -25,7 +25,7 @@
                 <p class="ex3">Texto</p>
                 
                 <script>
-                    document.getElementsByTagName("p")
+                    document.getElementsByTagName("p")[3].textContent = "Mundo";
                 //adicione aqui o script para resolução do Exercício 2
                 </script>
             
@@ -36,6 +36,7 @@
 
                 <script>
                 //adicione aqui o script para resolução do Exercício 3
+                document.getElementsByClassName("ex3")[2].textContent = "classe ex3";
                 </script>
 
 
@@ -46,6 +47,7 @@
 
                 <script>
                 //adicione aqui o script para resolução do Exercício 4
+                document.getElementById("image").src = " ./imgs/flowers_and_sum.jpg"
                 </script>
 
             
@@ -57,6 +59,7 @@
 
                 <script>
                 //adicione aqui o script para resolução do Exercício 5
+                document.getElementById("myText").value = "INE5646";
                 </script>
 
 
@@ -69,6 +72,7 @@
                 
                 <script>
                 //adicione aqui o script para resolução do Exercício 6
+                document.getElementById("demo").style.color = "red";
                 </script>
 
 
@@ -80,6 +84,8 @@
 
                 <script>
                 //adicione aqui o script para resolução do Exercício 7
+                document.getElementById("demo40").style.fontSize = "40px";
+
                 </script>
 
             <h3>Exercício 8</h3>
@@ -90,6 +96,8 @@
 
                 <script>
                 //adicione aqui o script para resolução do Exercício 8
+                document.getElementById("demo8").style.display = "None";
+
                 </script>
 
             <h3>Exercício 9</h3>
@@ -100,6 +108,11 @@
 
                 <script>
                     //adicione aqui o script para resolução do Exercício 9
+                    function tratadorDeClique(){
+                        console.log("click")
+                    }
+                    document.getElementById("botao1").addEventListener("click",tratadorDeClique)
+
                 </script>
 
 
@@ -109,7 +122,7 @@
 
                 Mostre no elemento com id "saidaMap" uma lista cujos elementos sejam o quadrado dos valores abaixo:
 
-                <p>1,2,3,4,5,6,7,8,9,10</p>
+                <p id="entradaMap">1,2,3,4,5,6,7,8,9,10</p>
 
                 <p>Use para isso a função <code>map</code>. <strong>Resultado: </strong></p>
 
@@ -117,12 +130,15 @@
 
                 <script>
                     //adicione aqui o script para resolução do Exercício 10
+                    let list = document.getElementById("entradaMap").textContent.split(',')
+                    let list2 = list.map(x=>x**2)
+                    document.getElementById("saidaMap").textContent = list2;
                 </script>
 
             <h3>Exercício 11</h3>
 
                 Mostre no elemento com id "saidaFilter" uma lista composta apenas pelos valores pares da lista abaixo: 
-                <p>1,2,3,4,5,6,7,8,9,10</p>
+                <p id="entradaFilter">1,2,3,4,5,6,7,8,9,10</p>
 
                 <p>Use para isso a função <code>filter</code>. <strong>Resultado: </strong></p>
 
@@ -131,13 +147,16 @@
                 
                 <script>
                     //adicione aqui o script para resolução do Exercício 11
+                    let list3 = document.getElementById("entradaFilter").textContent.split(',')
+                    let list4 = list.filter(x=>x%2==0)
+                    document.getElementById("saidaFilter").textContent = list4;
                 </script>
 
             <h3>Exercício 12</h3>
 
                 <p>Mostre no elemento com id "saidaReduce" a soma de todos os elementos da lista abaixo.</p>
 
-                <p>1,2,3,4,5,6,7,8,9,10</p>
+                <p id="entradaReduce">1,2,3,4,5,6,7,8,9,10</p>
                 
                 <p>Use para isso a função <code>reduce</code>. <strong>Resultado: </strong></p>
 
@@ -145,6 +164,10 @@
 
                 <script>
                     //adicione aqui o script para resolução do Exercício 12 
+                    let list5 = document.getElementById("entradaFilter").textContent.split(',');
+                    let list6 = list5.map(x=>parseInt(x))
+                    let total = list6.reduce((total, el) => total + el, 0);
+                    document.getElementById("saidaReduce").textContent = total;
                 </script>
 
             <h3>Exercício 13</h3>
@@ -152,12 +175,16 @@
                 <p>Mostre no elemento com id "saidaParesAoQuadradoMais42" a soma dos quadrados dos elementos pares da lista abaixo, mais 42. </p>
 
     
-                <p>1,2,3,4,5,6,7,8,9,10</p>
+                <p id="entradaParesAoQuadradoMais42">1,2,3,4,5,6,7,8,9,10</p>
                 <p><strong>Resultado: </strong></p>
                 <p id="saidaParesAoQuadradoMais42">Resultado aqui</p>
 
                 <script>
                     //adicione aqui o script para resolução do Exercício 13 
+                    let list7 = document.getElementById("entradaParesAoQuadradoMais42").textContent.split(',');
+                    let list8 = list7.map(x=>parseInt(x))
+                    let total2 = list8.reduce((total, el) => total + el**2, 0);
+                    document.getElementById("saidaParesAoQuadradoMais42").textContent = total2 + 42;
                 </script>
 
 </body>

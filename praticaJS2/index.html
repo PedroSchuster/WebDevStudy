@@ -187,32 +187,32 @@
         <form>
         
           <label>Nome:</label>
-          <input type="text" onblur="validaTextoEmBranco(this, 'statusNome', 'Nome')">
+          <input type="text" onblur="validaTextoEmBranco(this, 'statusNome')">
           <p id="statusNome"></p>
           
           
           <label>Sobrenome:</label>
-          <input type="text" onblur="validaTextoEmBranco(this, 'statusSobrenome', 'Sobrenome')">
+          <input type="text" onblur="validaTextoEmBranco(this, 'statusSobrenome')">
           <p id="statusSobrenome"></p>
           
           
           <label>CPF:</label>
-          <input type="text" onblur="validarCPF(this)">
+          <input type="text" onblur="validarCPF(this, 'statusCPF')">
           <p id="statusCPF"></p>
           
           
           <label>E-mail:</label>
-          <input type="text">
+          <input type="text" onblur="validaEmail(this, 'statusEmail')">
           <p id="statusEmail"></p>
           
           
           <label>Senha:</label>
-          <input type="password">
+          <input id="senha" type="password" onblur="validaTextoEmBranco(this, 'statusSenha')">
           <p id="statusSenha"></p>
           
           
           <label>Repita sua senha:</label>
-          <input type="password">
+          <input type="password" onblur="validaSenha(this, 'statusRepitaSenha')">
           <p id="statusRepitaSenha"></p>
           
           <div id="areaBotaoConta">
