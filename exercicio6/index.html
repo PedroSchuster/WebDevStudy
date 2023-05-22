@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="calculador_primos.js"></script>
+</head>
+<body>
+    <script>
+
+        function mostrarUltimoPrimoAntesDeValor(valor) {
+            const valorInicial = 1000;
+            let i = 0;
+          
+            const calcularIntervalo = () => {
+              gerador.atualizarValoresAte(i + valorInicial);
+          
+              i += valorInicial;
+              if (i < valor) {
+                setTimeout(calcularIntervalo, 0);
+              } else {
+                document.getElementById("resultado").textContent = gerador.last;
+                document.getElementById("progress").style.display = "none";
+              }
+            }
+          
+            calcularIntervalo();
+          }
+          
+          
+        
+        
+    </script>
+    <input type="button" value="Calcular último primo antes de 10000" onclick="mostrarUltimoPrimoAntesDeValor(1000000)">    
+    <p>Resultado: <p id="resultado">####</p></p>
+    <progress id="progress"></progress>
+</body>
+</html>

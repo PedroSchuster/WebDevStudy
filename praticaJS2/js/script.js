@@ -219,6 +219,35 @@ function validarCPF(obj, id){
     validarForm()
 }
 
+function validarCep(obj, id){
+    let msg = document.getElementById(id);
+    if (obj.value.length == 8){
+        msg.style.display = "block";
+        msg.style.color = "green";
+        msg.textContent = "Válido!";
+        return completarCampos(obj.value)
+    }
+    msg.style.display = "block";
+    msg.style.color = "red";
+    msg.textContent = "Cep não é válido";
+}
+
+function completarCampos(cep){
+    fetch("http://viacep.com.br/ws/"+ cep + "/json/").then(loadData);
+}
+
+function loadData(response){
+    response.json().then(loadJson);
+}
+
+function loadJson(info){
+    console.log(info)
+    document.getElementById("loug").value = info["logradouro"]
+    document.getElementById("bairro").value = info["bairro"]
+    document.getElementById("cidade").value = info["localidade"]
+    document.getElementById("estado").value = info["uf"]
+}
+
 function validarForm(){
     if (textoEmBrancoValido && emailValido && senhaValida && cpfValido){
         document.getElementById("areaBotaoConta").children[0].disabled = false;
